@@ -22,6 +22,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.navigationcompose.R
 
 @Composable
@@ -66,7 +67,10 @@ fun RencanaStudyView(
                     color = Color.White
                 )
                 Text(
-                    text = mahasiswa
+                    text = mahasiswa.nim,
+                    fontWeight = FontWeight.Light,
+                    fontSize = 12.sp,
+                    color = Color.White
                 )
 
             }
