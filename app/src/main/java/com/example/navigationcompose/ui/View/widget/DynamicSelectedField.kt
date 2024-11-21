@@ -1,8 +1,10 @@
 package com.example.navigationcompose.ui.View.widget
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -33,6 +35,10 @@ fun DynamicSelectedTextField(
             trailingIcon = {
                 ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
             },
+            colors = OutlinedTextFieldDefaults.colors(),,
+            modifier = Modifier
+                .menuAnchor()
+                .fillMaxWidth()
 
 
         )
