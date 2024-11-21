@@ -2,6 +2,7 @@ package com.example.navigationcompose.ui.View.Screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 
 @Composable
 fun RencanaStudyView(
@@ -9,9 +10,13 @@ fun RencanaStudyView(
     onBackButtonClicked: () -> Unit
 
 ){
-    var chosenDropdown by rember {
+    var chosenDropdown by remember {
         mutableStateOf(
 
         )
+    }
+    var checked by remember { mutableStateOf(false)}
+    var pilihanKelas by remember {
+        mutableStateOf("")
     }
 }
