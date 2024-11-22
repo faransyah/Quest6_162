@@ -88,7 +88,41 @@ fun TampilScreen(
                     Column(modifier = Modifier
                         .fillMaxSize()
                         .padding(16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally) {
+                        horizontalAlignment = Alignment.CenterHorizontally)
+                    {
+                        Text(
+                            text = "Data Diri",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 25.sp
+                        )
+                        Text(
+                            text = "Hasil rencana studi",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 25.sp
+                        )
+                        Spacer(modifier = Modifier.padding(8.dp))
+                        TampilData(
+                            judul = "Nama",
+                            isinya = mahasiswa.nama
+                        )
+                        TampilData(
+                            judul = "NIM",
+                            isinya = mahasiswa.nim
+                        )
+                        TampilData(
+                            judul = "Email",
+                            isinya = mahasiswa.email
+                        )
+                        TampilData(
+                            judul = "MataKuliah",
+                            isinya = rencanaStudi.namaMK
+                        )
+                        TampilData(
+                            judul = "Nama",
+                            isinya = rencanaStudi.kelas
+                        )
+                        Row() {  }
+
 
                     }
                 }
