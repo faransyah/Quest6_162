@@ -23,8 +23,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,11 +45,12 @@ import com.example.navigationcompose.ui.View.widget.DynamicSelectedTextField
 @Composable
 fun RencanaStudyView(
     mahasiswa: Mahasiswa,
+    onsubmitButtonClicked: (MutableList<String>) -> Unit,
     onBackButtonClicked: () -> Unit
 
 ){
     var chosenDropdown by remember {
-        mutableStateOf(
+        mutableStateOf(""
 
         )
     }
@@ -64,7 +67,7 @@ fun RencanaStudyView(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxSize(16.dp), verticalAlignment = Alignment.CenterVertically
+                .padding(16.dp), verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
@@ -74,11 +77,12 @@ fun RencanaStudyView(
                     .size(50.dp)
             )
             Spacer(modifier = Modifier.padding(start = 16.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Column(modifier = Modifier.weight(1f)
+            ){
                 Text(
                     text = mahasiswa.nama,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 15.dp,
+                    fontSize = 15.sp,
                     color = Color.White
                 )
                 Text(
