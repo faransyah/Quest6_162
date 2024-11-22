@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import com.example.navigationcompose.R
 import com.example.navigationcompose.data.MataKuliah
 import com.example.navigationcompose.data.RuangKelas
+import com.example.navigationcompose.model.Mahasiswa
 import com.example.navigationcompose.ui.View.widget.DynamicSelectedTextField
 
 @Composable
