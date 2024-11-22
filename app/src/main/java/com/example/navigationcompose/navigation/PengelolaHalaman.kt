@@ -12,6 +12,12 @@ import com.example.navigationcompose.ui.View.Screen.MahasiswaFormView
 import com.example.navigationcompose.ui.View.Screen.SplashView
 import com.example.navigationcompose.ui.View.ViewModel.MahasiswaViewModel
 
+enum class Halaman{
+    Splash,
+    Mahasiswa,
+    Matakuliah,
+    Tampil
+}
 @Composable
 fun MahasiswaApp(
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),

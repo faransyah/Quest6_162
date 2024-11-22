@@ -23,7 +23,6 @@ fun DynamicSelectedTextField(
 
 ){
     var expanded by remember { mutableStateOf(false) }
-
     ExposedDropdownMenuBox(
         expanded = expanded,
         onExpandedChange = { expanded = !expanded},
@@ -47,10 +46,10 @@ fun DynamicSelectedTextField(
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false}) {
             options.forEach { options: String ->
                 DropdownMenuItem(
-                    text = { Text(text = option) },
+                    text = { Text(text = options) },
                     onClick = {
                         expanded = false
-                        onValueChangeEvent(option)
+                        onValueChangeEvent
                     }
                 )
             }
