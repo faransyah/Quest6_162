@@ -32,7 +32,7 @@ import com.example.navigationcompose.model.Mahasiswa
 import com.example.navigationcompose.model.RencanaStudi
 
 @Composable
-fun TampilScreen(
+fun TampilanView(
     mahasiswa: Mahasiswa,
     rencanaStudi: RencanaStudi,
     onBackButton: () -> Unit
@@ -41,7 +41,7 @@ fun TampilScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Alignment.CenterVertically
+        horizontalAlignment =  Alignment.CenterHorizontally
     ) {
         Row(
             modifier = Modifier
@@ -137,5 +137,17 @@ fun TampilScreen(
                 }
             }
         }
+    }
+}
+@Composable
+fun TampilData(
+    judul: String,
+    isinya: String
+){
+    Row(modifier = Modifier.fillMaxWidth().padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween){
+        Text(judul,modifier = Modifier.weight(0.8f))
+        Text(" : ", modifier = Modifier.weight(0.8f))
+        Text(isinya, modifier = Modifier.weight(2f))
     }
 }

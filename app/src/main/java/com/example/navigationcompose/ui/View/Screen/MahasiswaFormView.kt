@@ -40,7 +40,9 @@ import com.example.navigationcompose.R
 
 @Composable
 fun MahasiswaFormView(
-    onSubmitButton: (MutableList<String>) -> Unit
+
+    onSimpanButtonClicked: (MutableList<String>) -> Unit,
+    onBackButtonClicked: () -> Unit
 ){
     var nama by remember { mutableStateOf("") }
     var nim by remember { mutableStateOf("") }
@@ -143,10 +145,10 @@ fun MahasiswaFormView(
                 Row(modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly) {
 
-                    Button(onClick = {}) {
+                    Button(onClick = {onBackButtonClicked()}) {
                         Text(text = "Kembali")
                     }
-                    Button(onClick = {}) {
+                    Button(onClick = {onSimpanButtonClicked(listData)}) {
                         Text(text = "Simpan")
                     }
                 }

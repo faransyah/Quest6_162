@@ -1,5 +1,6 @@
 package com.example.navigationcompose.ui.View.Screen
 
+import DynamicSelectedTextField
 import android.provider.MediaStore.Audio.Radio
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -41,7 +42,6 @@ import com.example.navigationcompose.R
 import com.example.navigationcompose.data.MataKuliah
 import com.example.navigationcompose.data.RuangKelas
 import com.example.navigationcompose.model.Mahasiswa
-import com.example.navigationcompose.ui.View.widget.DynamicSelectedTextField
 
 @Composable
 fun RencanaStudyView(
