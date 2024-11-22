@@ -31,6 +31,7 @@ fun MahasiswaApp(
 
 ) {
     val mahasiswaUiState = mahasiswaViewModel.mahasiswauiState.collectAsState().value
+    val krsUiState = krsViewModel.krsStateUi.collectAsState().value
 
     NavHost(
         navController = navController,
@@ -46,7 +47,7 @@ fun MahasiswaApp(
         }
         composable(route = Halaman.Mahasiswa.name) {
             MahasiswaFormView(
-                onSubmitButtonClicked = {
+                onSimpanButton = {
                     mahasiswaViewModel.saveDataMahasiswa(it)
                     navController.navigate(Halaman.Matakuliah.name)
                 },
@@ -55,6 +56,27 @@ fun MahasiswaApp(
                 }
             )
         }
+        composable(route = Halaman.Matakuliah.name) {
+            RencanaStudyView(
+                mahasiswa = mahasiswaUiState,
+                onsubmitButtonClicked = {
+                    krsViewModel.saveDataKRS(it)
+                    navController.navigate(Halaman.Tampil.name)
+                    onBackButtonClicked = { navController.popBackStack() }
 
+            )
+        }
+        composable(route = Halaman.Tampil.name){
+            TampilData(
+                mahasiswa = mahasiswaUiState,
+                rencanastudi = krsUiState,
+                onBackButtonClicked = {
+                    navController.navigate(Halaman.Splash.name){
+                        popUpToId(){ inclusive = true}
+                    }
+                }
+            )
+        }
+        }
     }
 }
